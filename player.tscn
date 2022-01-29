@@ -1,11 +1,16 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Assets/PlayerTemp.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/player.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 5, 5 )
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
+script = ExtResource( 2 )
+jump_height = 100.0
+jump_time_to_peak = 0.5
+jump_time_to_descent = 0.4
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
