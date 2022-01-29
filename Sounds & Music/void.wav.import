@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/void.wav-ac7962b1043656874b333ad9476ec94c.sample"
+
+[deps]
+
+source_file="res://Sounds & Music/void.wav"
+dest_files=[ "res://.import/void.wav-ac7962b1043656874b333ad9476ec94c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
