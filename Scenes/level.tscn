@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/lights/images.jpg" type="Texture" id=3]
+[ext_resource path="res://Scenes/void.tscn" type="PackedScene" id=4]
 
 [node name="Level" type="Node2D"]
 
@@ -14,18 +15,18 @@ tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
 collision_layer = 2
 format = 1
-tile_data = PoolIntArray( 196612, 1, 0, 196613, 1, 0, 196614, 1, 0 )
+tile_data = PoolIntArray( 196637, 7, 0, 196638, 8, 0, 196639, 8, 0, 196640, 8, 0, 196641, 9, 0, 393237, 5, 0, 393238, 5, 0, 393239, 5, 0, 393240, 5, 0, 393241, 5, 0, 393242, 5, 0, 393243, 5, 0, 393244, 5, 0, 393245, 5, 0, 393246, 5, 0, 393247, 5, 0, 393248, 5, 0, 393249, 5, 0, 393250, 5, 0, 393251, 5, 0, 393252, 5, 0, 393253, 5, 0, 393254, 5, 0, 393255, 5, 0, 393256, 5, 0, 393257, 5, 0, 393258, 5, 0, 393259, 6, 0, 458771, 6, 0, 458791, 6, 0, 458811, 6, 0 )
 
 [node name="Glass" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
 collision_layer = 4
 format = 1
-tile_data = PoolIntArray( 65544, 3, 0, 393216, 3, 0, 393217, 3, 0, 393218, 3, 0, 393219, 3, 0, 393220, 3, 0, 393221, 3, 0, 393222, 3, 0, 393223, 3, 0, 393224, 3, 0, 393225, 3, 0, 393226, 3, 0, 393227, 3, 0, 393228, 3, 0, 393229, 3, 0, 393230, 3, 0, 393231, 3, 0, 393232, 3, 0, 393233, 3, 0, 393234, 3, 0, 393235, 3, 0, 393236, 3, 0 )
+tile_data = PoolIntArray( 65544, 3, 0, 393216, 4, 0, 393217, 5, 0, 393218, 5, 0, 393219, 5, 0, 393220, 5, 0, 393221, 5, 0, 393222, 5, 0, 393223, 5, 0, 393224, 5, 0, 393225, 5, 0, 393226, 5, 0, 393227, 5, 0, 393228, 5, 0, 393229, 5, 0, 393230, 5, 0, 393231, 5, 0, 393232, 5, 0, 393233, 5, 0, 393234, 5, 0, 393235, 5, 0, 393236, 5, 0, 393237, 6, 0, 393260, 5, 0, 393261, 5, 0, 393262, 5, 0, 393263, 5, 0, 393264, 5, 0, 393265, 5, 0, 393266, 5, 0, 393267, 5, 0, 393268, 5, 0, 393269, 5, 0, 393270, 5, 0, 393271, 5, 0, 393272, 5, 0, 393273, 5, 0, 393274, 5, 0, 393275, 5, 0, 393276, 5, 0, 393277, 5, 0, 393278, 5, 0, 393279, 5, 0, 393280, 5, 0, 393281, 5, 0, 393282, 5, 0, 393283, 5, 0, 393284, 5, 0, 393285, 5, 0, 393286, 5, 0, 393287, 5, 0, 393288, 5, 0, 393289, 5, 0, 393290, 5, 0, 393291, 5, 0, 393292, 5, 0, 393293, 5, 0, 393294, 5, 0, 393295, 5, 0, 393296, 5, 0, 393297, 5, 0, 393298, 5, 0, 393299, 5, 0, 393300, 6, 0, 458831, 5, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 16, 91 )
-collision_mask = 6
+collision_mask = 14
 jump_height = 50.0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -33,11 +34,28 @@ current = true
 process_mode = 0
 limit_left = -30
 limit_top = -1000
-limit_right = 1000
-limit_bottom = 200
+limit_right = 2000
+limit_bottom = 1000
 editor_draw_limits = true
 
 [node name="Light2D" type="Light2D" parent="Player"]
 texture = ExtResource( 3 )
 texture_scale = 2.42
 energy = 2.1
+
+[node name="Voids" type="Node2D" parent="."]
+
+[node name="Void" parent="Voids" instance=ExtResource( 4 )]
+position = Vector2( 472, 80 )
+
+[node name="Void2" parent="Voids" instance=ExtResource( 4 )]
+position = Vector2( 504, 80 )
+
+[node name="Void3" parent="Voids" instance=ExtResource( 4 )]
+position = Vector2( 488, 80 )
+
+[node name="Void4" parent="Voids" instance=ExtResource( 4 )]
+position = Vector2( 520, 80 )
+
+[node name="Void5" parent="Voids" instance=ExtResource( 4 )]
+position = Vector2( 536, 80 )
