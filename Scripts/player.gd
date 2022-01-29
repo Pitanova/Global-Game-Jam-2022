@@ -4,6 +4,8 @@ export var move_speed = 200.0
 
 var velocity := Vector2.ZERO
 
+var dimension := false
+
 export var jump_height : float
 export var jump_time_to_peak : float
 export var jump_time_to_descent : float
@@ -14,15 +16,26 @@ onready var jump_gravity : float = ((-2.0 * jump_height) / (jump_time_to_peak * 
 onready var fall_gravity : float = ((-2.0 * jump_height) / (jump_time_to_descent * jump_time_to_descent)) * -1.0
 
 func _physics_process(delta):
-	velocity.y += get_gravity() * delta
+	velocity.y += get_jump_gravity() * delta
 	velocity.x = get_input_velocity() * move_speed
 	
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		jump()
 	
+	if Input.is_action_just_pressed("down") and dimension == false:
+		position.y = 116
+		rotation_degrees = 180
+		fall_gravity *= -1
+		dimension = true
+	elif Input.is_action_just_pressed("down") and dimension == true:
+		position.y = 91
+		rotation_degrees = 0
+		fall_gravity *= -1
+		dimension = false
+	
 	velocity = move_and_slide(velocity, Vector2.UP)
 
-func get_gravity() -> float:
+func get_jump_gravity() -> float:
 	return jump_gravity if velocity.y < 0.0 else fall_gravity
 
 func jump():
