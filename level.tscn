@@ -7,6 +7,10 @@
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 37, 28 )
+jump_height = 50.0
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
