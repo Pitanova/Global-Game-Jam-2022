@@ -1,13 +1,19 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/lights/images.jpg" type="Texture" id=3]
 [ext_resource path="res://Scenes/void.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Background.png" type="Texture" id=5]
 
 [node name="Level" type="Node2D"]
 
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 545, -104 )
+texture = ExtResource( 5 )
+
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color( 0, 0, 0, 1 )
 
 [node name="Platforms" type="TileMap" parent="."]
