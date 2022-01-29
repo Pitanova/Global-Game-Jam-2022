@@ -27,7 +27,7 @@ func _physics_process(delta):
 		rotation_degrees = 180
 		fall_gravity *= -1
 		dimension = true
-	elif Input.is_action_just_pressed("up") and dimension == true:
+	elif Input.is_action_just_pressed("up") and dimension == true and is_on_ceiling():
 		position.y = 91
 		rotation_degrees = 0
 		fall_gravity *= -1
