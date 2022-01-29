@@ -45,13 +45,13 @@ func _physics_process(delta):
 		$SoundJump.play()
 		
 	
-	$playerTrailRight.visible = false
-	$playerTrailLeft.visible = false
+	#$playerTrailRight.visible = false
+	#$playerTrailLeft.visible = false
 	
-	if velocity.x >= 0.1 and (is_on_floor() or is_on_ceiling()):
-		$playerTrailLeft.visible = true
-	elif velocity.x <= -0.1 and (is_on_floor() or is_on_ceiling()):
-		$playerTrailRight.visible = true
+	#if velocity.x >= 0.1 and (is_on_floor() or is_on_ceiling()):
+	#	$playerTrailLeft.visible = true
+	#elif velocity.x <= -0.1 and (is_on_floor() or is_on_ceiling()):
+	#	$playerTrailRight.visible = true
 	
 	velocity = move_and_slide(velocity, Vector2.UP)
 
