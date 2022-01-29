@@ -19,15 +19,15 @@ func _physics_process(delta):
 	velocity.y += get_jump_gravity() * delta
 	velocity.x = get_input_velocity() * move_speed
 	
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and (is_on_floor() or is_on_ceiling()):
 		jump()
 	
-	if Input.is_action_just_pressed("down") and dimension == false:
+	if Input.is_action_just_pressed("down") and dimension == false and is_on_floor():
 		position.y = 116
 		rotation_degrees = 180
 		fall_gravity *= -1
 		dimension = true
-	elif Input.is_action_just_pressed("down") and dimension == true:
+	elif Input.is_action_just_pressed("up") and dimension == true:
 		position.y = 91
 		rotation_degrees = 0
 		fall_gravity *= -1
@@ -36,10 +36,16 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity, Vector2.UP)
 
 func get_jump_gravity() -> float:
-	return jump_gravity if velocity.y < 0.0 else fall_gravity
+	if not dimension:
+		return jump_gravity if velocity.y < 0.0 else fall_gravity
+	else:
+		return jump_gravity * -1 if velocity.y > 0.0 else fall_gravity
 
 func jump():
-	velocity.y = jump_velocity
+	if not dimension:
+		velocity.y = jump_velocity
+	else:
+		velocity.y = -jump_velocity
 
 func get_input_velocity() -> float:
 	var horizontal := 0.0
