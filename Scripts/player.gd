@@ -43,7 +43,11 @@ func _physics_process(delta):
 	elif Input.is_action_just_pressed("jump") and (is_on_floor() or is_on_ceiling()):
 		jump()
 		$SoundJump.play()
-		
+	
+	#if dimension:
+	#	$Light2D.energy = 2.1
+	#else:
+	#	$Light2D.energy = 2
 	
 	#$playerTrailRight.visible = false
 	#$playerTrailLeft.visible = false

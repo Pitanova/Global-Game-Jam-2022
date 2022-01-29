@@ -10,5 +10,5 @@ func _ready():
 		particles_instance.set_one_shot(true)
 		particles_instance.set_modulate(Color(1,1,1,0))
 		particles_instance.set_emitting(true)
-		print(material.resource_path)
+		particles_instance.name = material.resource_path.get_file().trim_suffix(".tres")
 		add_child(particles_instance)
