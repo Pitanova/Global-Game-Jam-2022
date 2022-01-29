@@ -5,13 +5,13 @@
 [ext_resource path="res://Assets/leftlighttile.png" type="Texture" id=3]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
-points = PoolVector2Array( 16, 15.815, 0.465561, 15.815, 0.465561, 0.465561, 16, 0.465561 )
+points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
-points = PoolVector2Array( 15.815, 15.3499, 0.465561, 15.3499, 0.465561, 0.465561, 15.815, 0.465561 )
+points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 
 [sub_resource type="ConvexPolygonShape2D" id=3]
-points = PoolVector2Array( 16, 16, 0.232994, 16, 0, 0, 16, 0 )
+points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 
 [resource]
 0/name = "middlelighttile.png 0"

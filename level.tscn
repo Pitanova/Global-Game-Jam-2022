@@ -6,11 +6,17 @@
 [node name="Level" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 37, 28 )
+position = Vector2( 14, 42 )
 jump_height = 50.0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
+process_mode = 0
+limit_left = -30
+limit_top = -1000
+limit_right = 1000
+limit_bottom = 100
+editor_draw_limits = true
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
