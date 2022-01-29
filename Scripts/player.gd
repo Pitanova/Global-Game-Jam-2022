@@ -5,6 +5,7 @@ export var move_speed = 200.0
 var velocity := Vector2.ZERO
 
 var dimension := false
+# where true is right and false is left
 
 export var jump_height : float
 export var jump_time_to_peak : float
@@ -18,13 +19,23 @@ onready var fall_gravity : float = ((-2.0 * jump_height) / (jump_time_to_descent
 func _physics_process(delta):
 	velocity.y += get_jump_gravity() * delta
 	velocity.x = get_input_velocity() * move_speed
+
+	var dimension_modifier := 1
+	if dimension:
+		dimension_modifier = -1
 	
-	if Input.is_action_just_pressed("down") and dimension == false and is_on_floor():
+	var GlassTileMap: TileMap = get_tree().current_scene.get_node("Glass")
+	var tile_idx = GlassTileMap.get_cellv(GlassTileMap.world_to_map(position) + Vector2(0,dimension_modifier))
+	var on_glass = tile_idx != -1
+	
+	
+	if Input.is_action_just_pressed("down") and dimension == false and is_on_floor() and on_glass:
 		position.y = 116
 		rotation_degrees = 180
 		fall_gravity *= -1
+		scale.x *= -1
 		dimension = true
-	elif Input.is_action_just_pressed("up") and dimension == true and is_on_ceiling():
+	elif Input.is_action_just_pressed("up") and dimension == true and is_on_ceiling() and on_glass:
 		position.y = 91
 		rotation_degrees = 0
 		fall_gravity *= -1
@@ -33,7 +44,17 @@ func _physics_process(delta):
 		jump()
 		$SoundJump.play()
 		
+	
+	$playerTrailRight.visible = false
+	$playerTrailLeft.visible = false
+	
+	if velocity.x >= 0.1 and (is_on_floor() or is_on_ceiling()):
+		$playerTrailLeft.visible = true
+	elif velocity.x <= -0.1 and (is_on_floor() or is_on_ceiling()):
+		$playerTrailRight.visible = true
+	
 	velocity = move_and_slide(velocity, Vector2.UP)
+
 
 func get_jump_gravity() -> float:
 	if not dimension:
@@ -52,7 +73,9 @@ func get_input_velocity() -> float:
 	
 	if Input.is_action_pressed("left"):
 		horizontal -= 1.0
+		$Sprite.set_flip_h(true)
 	if Input.is_action_pressed("right"):
 		horizontal += 1.0
-	
+		$Sprite.set_flip_h(false)
+		
 	return horizontal

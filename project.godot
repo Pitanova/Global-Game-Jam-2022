@@ -14,6 +14,10 @@ config/name="GGJ2022"
 run/main_scene="res://Scenes/level.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+ParticlesCache="*res://Scripts/ParticlesCache.gd"
+
 [display]
 
 window/size/width=400
