@@ -19,9 +19,6 @@ func _physics_process(delta):
 	velocity.y += get_jump_gravity() * delta
 	velocity.x = get_input_velocity() * move_speed
 	
-	if Input.is_action_just_pressed("jump") and (is_on_floor() or is_on_ceiling()):
-		jump()
-	
 	if Input.is_action_just_pressed("down") and dimension == false and is_on_floor():
 		position.y = 116
 		rotation_degrees = 180
@@ -32,7 +29,10 @@ func _physics_process(delta):
 		rotation_degrees = 0
 		fall_gravity *= -1
 		dimension = false
-	
+	elif Input.is_action_just_pressed("jump") and (is_on_floor() or is_on_ceiling()):
+		jump()
+		$SoundJump.play()
+		
 	velocity = move_and_slide(velocity, Vector2.UP)
 
 func get_jump_gravity() -> float:
