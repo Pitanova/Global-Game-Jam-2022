@@ -5,8 +5,16 @@
 
 [node name="Level" type="Node2D"]
 
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 2
+format = 1
+tile_data = PoolIntArray( 196612, 1, 0, 196613, 0, 0, 196614, 2, 0, 393216, 3, 0, 393217, 3, 0, 393218, 3, 0, 393219, 3, 0, 393220, 3, 0, 393221, 3, 0, 393222, 3, 0, 393223, 3, 0, 393224, 3, 0, 393225, 3, 0, 393226, 3, 0, 393227, 3, 0, 393228, 3, 0, 393229, 3, 0, 393230, 3, 0, 393231, 3, 0, 393232, 3, 0, 393233, 3, 0, 393234, 3, 0, 393235, 3, 0, 393236, 3, 0, 393237, 3, 0, 393238, 3, 0 )
+
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 14, 42 )
+position = Vector2( 13, 83 )
+collision_mask = 2
 jump_height = 50.0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -15,11 +23,5 @@ process_mode = 0
 limit_left = -30
 limit_top = -1000
 limit_right = 1000
-limit_bottom = 100
+limit_bottom = 200
 editor_draw_limits = true
-
-[node name="TileMap" type="TileMap" parent="."]
-tile_set = ExtResource( 1 )
-cell_size = Vector2( 16, 16 )
-format = 1
-tile_data = PoolIntArray( 196608, 1, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 2, 0, 196617, 0, 0, 196618, 0, 0, 196619, 0, 0, 196620, 0, 0 )
