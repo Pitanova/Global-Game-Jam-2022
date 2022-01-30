@@ -17,6 +17,7 @@ config/icon="res://icon.png"
 [autoload]
 
 ParticlesCache="*res://Scripts/ParticlesCache.gd"
+SceneChanger="*res://Scripts/SceneChanger.gd"
 
 [display]
 

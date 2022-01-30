@@ -102,3 +102,8 @@ func got_darkOrb():
 	$Light2D.energy -= 0.5
 	if $Light2D.energy < 0:
 		$Light2D.energy = 0
+
+
+func _on_Area2D_body_entered(body):
+	if body.get_name() == "Player":
+		SceneChanger.change_scene("res://Scenes/level2.tscn")
