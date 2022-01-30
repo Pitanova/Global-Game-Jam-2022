@@ -109,4 +109,4 @@ func _on_Area2D_body_entered(body):
 		elif get_tree().current_scene.name == "Level2":
 			SceneChanger.change_scene("res://Scenes/level3.tscn")
 		elif get_tree().current_scene.name == "Level3":
-			pass #Add end screen here
+			SceneChanger.change_scene("res://Scenes/credits.tscn")
