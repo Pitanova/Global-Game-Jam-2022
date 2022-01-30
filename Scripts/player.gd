@@ -6,6 +6,7 @@ const ACCELERATION = 50
 const SLOW_DOWN_PERCENT_GROUND = 0.4
 const SLOW_DOWN_PERCENT_AIR = 0.2
 
+var can_move = true
 var dimension := false
 # where true is right and false is left
 
@@ -21,6 +22,10 @@ onready var fall_gravity : float = ((-2.0 * jump_height) / (jump_time_to_descent
 var light_default = 1.03
 
 func _physics_process(delta):
+	
+	if not can_move:
+		return
+	
 	velocity.y += get_jump_gravity() * delta
 
 	if Input.is_action_pressed("left"):
