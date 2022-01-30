@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Flip Flop Credits Theme.wav-287cb4de61b26115c02c256f6df56d71.sample"
+
+[deps]
+
+source_file="res://Sounds & Music/Flip Flop Credits Theme.wav"
+dest_files=[ "res://.import/Flip Flop Credits Theme.wav-287cb4de61b26115c02c256f6df56d71.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
