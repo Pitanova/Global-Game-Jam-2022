@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/player.tscn" type="PackedScene" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Assets/Background.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/voidFlop.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/darktile.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/darkOrb.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/lightOrb.tscn" type="PackedScene" id=9]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 blend_mode = 1
@@ -159,3 +161,9 @@ texture = ExtResource( 3 )
 texture_scale = 2.42
 energy = 1.03
 mode = 2
+
+[node name="lightOrb" parent="." instance=ExtResource( 9 )]
+position = Vector2( 40, 136 )
+
+[node name="darkOrb" parent="." instance=ExtResource( 8 )]
+position = Vector2( 96, 136 )
