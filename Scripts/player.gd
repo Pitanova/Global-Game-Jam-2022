@@ -76,7 +76,8 @@ func _physics_process(delta):
 	else:
 		$Light2D.energy = light_default
 
-	
+	AudioManager.sound_change(dimension)
+
 	velocity = move_and_slide(velocity, Vector2.UP)
 
 

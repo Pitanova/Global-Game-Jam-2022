@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Sounds & Music/Brightside final.wav" type="AudioStream" id=1]
+[ext_resource path="res://Sounds & Music/Darkside final.wav" type="AudioStream" id=2]
+[ext_resource path="res://Scenes/AudioManager.gd" type="Script" id=3]
+
+[node name="AudioManager" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="FlipMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = -10.0
+
+[node name="FlopMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = -10.0
