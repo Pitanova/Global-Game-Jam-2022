@@ -3,7 +3,7 @@
 name: CI
 
 env:
-  GODOT_VERSION: 3.3.3
+  GODOT_VERSION: 3.4.2
   
 # Controls when the workflow will run
 on:
@@ -22,7 +22,7 @@ jobs:
     name: Web Export
     runs-on: ubuntu-latest
     container:
-      image: barichello/godot-ci:3.3.3
+      image: barichello/godot-ci:3.4.2
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -35,6 +35,7 @@ jobs:
       - name: Web Build
         run: |
           mkdir -v -p build/web
+          cd $EXPORT_NAME
           godot -v --export "HTML5" ./build/web/index.html
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
