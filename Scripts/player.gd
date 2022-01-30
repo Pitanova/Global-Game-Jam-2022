@@ -106,6 +106,7 @@ func _on_Area2D_body_entered(body):
 	if body.get_name() == "Player":
 		print(get_tree().current_scene.name)
 		if get_tree().current_scene.name == "Level1":
+			$EndSong.play()
 			SceneChanger.change_scene("res://Scenes/level2.tscn")
 		elif get_tree().current_scene.name == "Level2":
 			SceneChanger.change_scene("res://Scenes/level3.tscn")
