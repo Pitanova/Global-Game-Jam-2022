@@ -16,8 +16,6 @@ onready var jump_velocity : float = ((2.0 * jump_height) / jump_time_to_peak) * 
 onready var jump_gravity : float = ((-2.0 * jump_height) / (jump_time_to_peak * jump_time_to_peak)) * -1.0
 onready var fall_gravity : float = ((-2.0 * jump_height) / (jump_time_to_descent * jump_time_to_descent)) * -1.0
 
-var light_default = 1.03
-
 func _physics_process(delta):
 	velocity.y += get_jump_gravity() * delta
 	velocity.x = get_input_velocity() * move_speed
@@ -45,14 +43,6 @@ func _physics_process(delta):
 	elif Input.is_action_just_pressed("jump") and (is_on_floor() or is_on_ceiling()):
 		jump()
 		$SoundJump.play()
-	
-	if dimension:
-		if $Light2D.energy >= 0:
-			$Light2D.energy -= 0.05 * delta
-		else:
-			$Light2D.energy = 0
-	else:
-		$Light2D.energy = light_default
 	
 	#if dimension:
 	#	$Light2D.energy = 2.1
