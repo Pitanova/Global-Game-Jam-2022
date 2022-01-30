@@ -16,7 +16,7 @@ blend_mode = 3
 
 [node name="Level" type="Node2D"]
 
-[node name="BackgroundFlip2" type="Sprite" parent="."]
+[node name="BackgroundFlop" type="Sprite" parent="."]
 position = Vector2( 722.998, 352 )
 rotation = 3.14159
 scale = Vector2( 92.0889, -30.2442 )

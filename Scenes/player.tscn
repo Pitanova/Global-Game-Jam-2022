@@ -24,4 +24,5 @@ shape = SubResource( 1 )
 stream = ExtResource( 3 )
 
 [node name="Particles2D" type="Particles2D" parent="."]
+visible = false
 process_material = ExtResource( 4 )

@@ -93,3 +93,11 @@ func get_input_velocity() -> float:
 		$Sprite.set_flip_h(false)
 		
 	return horizontal
+
+func got_lightOrb():
+	$Light2D.energy += 0.5
+
+func got_darkOrb():
+	$Light2D.energy -= 0.5
+	if $Light2D.energy < 0:
+		$Light2D.energy = 0
