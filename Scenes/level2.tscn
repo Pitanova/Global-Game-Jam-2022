@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/player.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Scenes/voidFlop.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/darktile.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/movingPlat.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/lightOrb.tscn" type="PackedScene" id=9]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 blend_mode = 1
@@ -15,13 +16,15 @@ blend_mode = 1
 [sub_resource type="CanvasItemMaterial" id=2]
 blend_mode = 3
 
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 10, 72 )
+
 [node name="Level2" type="Node2D"]
 
 [node name="BackgroundFlip2" type="Sprite" parent="."]
-visible = false
-position = Vector2( 959.265, 351.999 )
+position = Vector2( 1055.59, 351.999 )
 rotation = 3.14159
-scale = Vector2( 121.622, -30.2442 )
+scale = Vector2( 133.663, -30.2442 )
 texture = ExtResource( 7 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
@@ -29,8 +32,8 @@ color = Color( 0, 0, 0, 1 )
 
 [node name="BackgroundFlip" type="Sprite" parent="."]
 material = SubResource( 1 )
-position = Vector2( 968, -64 )
-scale = Vector2( 4.84, 0.8 )
+position = Vector2( 1060, -64 )
+scale = Vector2( 5.3, 0.8 )
 texture = ExtResource( 5 )
 
 [node name="BackgroundFlop" type="Sprite" parent="."]
@@ -44,7 +47,7 @@ tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
 collision_layer = 4
 format = 1
-tile_data = PoolIntArray( 393216, 4, 0, 393217, 5, 0, 393218, 5, 0, 393219, 5, 0, 393220, 5, 0, 393221, 5, 0, 393222, 5, 0, 393223, 5, 0, 393224, 5, 0, 393225, 5, 0, 393226, 5, 0, 393227, 5, 0, 393228, 5, 0, 393229, 5, 0, 393230, 5, 0, 393231, 5, 0, 393232, 5, 0, 393233, 5, 0, 393234, 5, 0, 393235, 5, 0, 393236, 5, 0, 393237, 5, 0, 393238, 5, 0, 393239, 5, 0, 393240, 5, 0, 393241, 5, 0, 393242, 5, 0, 393243, 5, 0, 393244, 5, 0, 393245, 5, 0, 393246, 5, 0, 393247, 5, 0, 393248, 5, 0, 393249, 5, 0, 393250, 5, 0, 393251, 5, 0, 393252, 5, 0, 393253, 5, 0, 393254, 5, 0, 393255, 5, 0, 393256, 5, 0, 393257, 5, 0, 393258, 5, 0, 393259, 5, 0, 393260, 5, 0, 393261, 5, 0, 393262, 5, 0, 393263, 5, 0, 393264, 5, 0, 393265, 5, 0, 393266, 5, 0, 393267, 5, 0, 393268, 5, 0, 393269, 5, 0, 393270, 5, 0, 393271, 5, 0, 393272, 5, 0, 393273, 5, 0, 393274, 5, 0, 393275, 5, 0, 393276, 5, 0, 393277, 5, 0, 393278, 5, 0, 393279, 5, 0, 393280, 5, 0, 393281, 5, 0, 393282, 5, 0, 393283, 5, 0, 393284, 5, 0, 393285, 5, 0, 393286, 5, 0, 393287, 5, 0, 393288, 5, 0, 393289, 5, 0, 393290, 5, 0, 393291, 5, 0, 393292, 5, 0, 393293, 5, 0, 393294, 5, 0, 393295, 5, 0, 393296, 5, 0, 393297, 5, 0, 393298, 5, 0, 393299, 5, 0, 393300, 5, 0, 393301, 5, 0, 393302, 5, 0, 393303, 5, 0, 393304, 5, 0, 393305, 5, 0, 393306, 5, 0, 393307, 5, 0, 393308, 5, 0, 393309, 5, 0, 393310, 5, 0, 393311, 5, 0, 393312, 5, 0, 393313, 5, 0, 393314, 5, 0, 393315, 5, 0, 393316, 5, 0, 393317, 5, 0, 393318, 5, 0, 393319, 5, 0, 393320, 5, 0, 393321, 5, 0, 393322, 5, 0, 393323, 5, 0, 393324, 5, 0, 393325, 5, 0, 393326, 5, 0, 393327, 5, 0, 393328, 5, 0, 393329, 5, 0, 393330, 5, 0, 393331, 5, 0, 393332, 5, 0, 393333, 5, 0, 393334, 5, 0, 393335, 5, 0, 393336, 6, 0, 524287, 6, 0, 589823, 6, 0, 655359, 6, 0, 720895, 6, 0, 786431, 6, 0, 851967, 6, 0, 917503, 6, 0, 983039, 6, 0, 1048575, 6, 0, 1114111, 6, 0 )
+tile_data = PoolIntArray( 262276, 5, 0, 327812, 5, 0, 393216, 4, 0, 393217, 5, 0, 393218, 5, 0, 393219, 5, 0, 393220, 5, 0, 393221, 5, 0, 393222, 5, 0, 393223, 5, 0, 393224, 5, 0, 393225, 5, 0, 393226, 5, 0, 393227, 5, 0, 393228, 5, 0, 393229, 5, 0, 393230, 5, 0, 393231, 5, 0, 393232, 5, 0, 393233, 5, 0, 393234, 5, 0, 393235, 5, 0, 393236, 5, 0, 393237, 5, 0, 393238, 5, 0, 393239, 5, 0, 393240, 5, 0, 393241, 5, 0, 393242, 5, 0, 393243, 5, 0, 393244, 5, 0, 393245, 5, 0, 393246, 5, 0, 393247, 5, 0, 393248, 5, 0, 393249, 5, 0, 393250, 5, 0, 393251, 5, 0, 393252, 5, 0, 393253, 5, 0, 393254, 5, 0, 393255, 5, 0, 393256, 5, 0, 393257, 5, 0, 393258, 5, 0, 393259, 5, 0, 393260, 5, 0, 393261, 5, 0, 393262, 5, 0, 393263, 5, 0, 393264, 5, 0, 393265, 5, 0, 393266, 5, 0, 393267, 5, 0, 393268, 5, 0, 393269, 5, 0, 393270, 5, 0, 393271, 5, 0, 393272, 5, 0, 393273, 5, 0, 393274, 5, 0, 393275, 5, 0, 393276, 5, 0, 393277, 5, 0, 393278, 5, 0, 393279, 5, 0, 393280, 5, 0, 393281, 5, 0, 393282, 5, 0, 393283, 5, 0, 393284, 5, 0, 393285, 5, 0, 393286, 5, 0, 393287, 5, 0, 393288, 5, 0, 393289, 5, 0, 393290, 5, 0, 393291, 5, 0, 393292, 5, 0, 393293, 5, 0, 393294, 5, 0, 393295, 5, 0, 393296, 5, 0, 393297, 5, 0, 393298, 5, 0, 393299, 5, 0, 393300, 5, 0, 393301, 5, 0, 393302, 5, 0, 393303, 5, 0, 393304, 5, 0, 393305, 5, 0, 393306, 5, 0, 393307, 5, 0, 393308, 5, 0, 393309, 5, 0, 393310, 5, 0, 393311, 5, 0, 393312, 5, 0, 393313, 5, 0, 393314, 5, 0, 393315, 5, 0, 393316, 5, 0, 393317, 5, 0, 393318, 5, 0, 393319, 5, 0, 393320, 5, 0, 393321, 5, 0, 393322, 5, 0, 393323, 5, 0, 393324, 5, 0, 393325, 5, 0, 393326, 5, 0, 393327, 5, 0, 393328, 5, 0, 393329, 5, 0, 393330, 5, 0, 393331, 5, 0, 393332, 5, 0, 393333, 5, 0, 393334, 5, 0, 393335, 5, 0, 393336, 5, 0, 393337, 5, 0, 393338, 5, 0, 393339, 5, 0, 393340, 5, 0, 393341, 5, 0, 393342, 5, 0, 393343, 5, 0, 393344, 5, 0, 393345, 5, 0, 393346, 5, 0, 393347, 5, 0, 393348, 5, 0, 524287, 6, 0, 589823, 6, 0, 655359, 6, 0, 720895, 6, 0, 786431, 6, 0, 851967, 6, 0, 917503, 6, 0, 983039, 6, 0, 1048575, 6, 0, 1114111, 6, 0 )
 
 [node name="PlatformsFlip" type="TileMap" parent="."]
 material = SubResource( 2 )
@@ -152,10 +155,6 @@ rotation = 1.57079
 position = Vector2( 1728, 88 )
 rotation = 1.57079
 
-[node name="Void25" parent="VoidsFlip" instance=ExtResource( 4 )]
-position = Vector2( 1824, 88 )
-rotation = 1.57079
-
 [node name="Void28" parent="VoidsFlip" instance=ExtResource( 4 )]
 position = Vector2( 1880, 88 )
 rotation = 1.57079
@@ -225,9 +224,6 @@ position = Vector2( 376, 208 )
 
 [node name="Void34" parent="VoidsFlop" instance=ExtResource( 6 )]
 position = Vector2( 376, 240 )
-
-[node name="Void35" parent="VoidsFlop" instance=ExtResource( 6 )]
-position = Vector2( 1152, 240 )
 
 [node name="Void13" parent="VoidsFlop" instance=ExtResource( 6 )]
 position = Vector2( 600, 120 )
@@ -321,10 +317,6 @@ rotation = 1.5708
 position = Vector2( 1608, 120 )
 rotation = 1.5708
 
-[node name="Void38" parent="VoidsFlop" instance=ExtResource( 6 )]
-position = Vector2( 1640, 120 )
-rotation = 1.5708
-
 [node name="Void41" parent="VoidsFlop" instance=ExtResource( 6 )]
 position = Vector2( 1880, 120 )
 rotation = 1.5708
@@ -361,3 +353,22 @@ mode = 2
 position = Vector2( 1080, 144 )
 duration = 3.0
 move_from = Vector2( 128, 0 )
+
+[node name="Exit" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit"]
+position = Vector2( 1944, 104 )
+shape = SubResource( 3 )
+
+[node name="Orb" type="Node2D" parent="."]
+
+[node name="lightOrb" parent="Orb" instance=ExtResource( 9 )]
+position = Vector2( 600, 208 )
+
+[node name="lightOrb2" parent="Orb" instance=ExtResource( 9 )]
+position = Vector2( 992, 128 )
+
+[node name="lightOrb3" parent="Orb" instance=ExtResource( 9 )]
+position = Vector2( 1448, 128 )
+
+[connection signal="body_entered" from="Exit" to="Player" method="_on_Area2D_body_entered"]

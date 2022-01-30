@@ -103,4 +103,10 @@ func got_darkOrb():
 
 func _on_Area2D_body_entered(body):
 	if body.get_name() == "Player":
-		SceneChanger.change_scene("res://Scenes/level2.tscn")
+		print(get_tree().current_scene.name)
+		if get_tree().current_scene.name == "Level1":
+			SceneChanger.change_scene("res://Scenes/level2.tscn")
+		elif get_tree().current_scene.name == "Level2":
+			SceneChanger.change_scene("res://Scenes/level3.tscn")
+		elif get_tree().current_scene.name == "Level3":
+			pass #Add end screen here
