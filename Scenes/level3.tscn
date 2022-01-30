@@ -1,0 +1,627 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://Scenes/player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/lights/images.jpg" type="Texture" id=3]
+[ext_resource path="res://Scenes/void.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Background.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/voidFlop.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/darktile.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/movingPlat.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/darkOrb.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/lightOrb.tscn" type="PackedScene" id=10]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+blend_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id=2]
+blend_mode = 3
+
+[node name="Level3" type="Node2D"]
+
+[node name="BackgroundFlip2" type="Sprite" parent="."]
+position = Vector2( 959.265, 351.999 )
+rotation = 3.14159
+scale = Vector2( 121.622, -30.2442 )
+texture = ExtResource( 7 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0, 0, 0, 1 )
+
+[node name="BackgroundFlip" type="Sprite" parent="."]
+material = SubResource( 1 )
+position = Vector2( 968, -64 )
+scale = Vector2( 4.84, 0.8 )
+texture = ExtResource( 5 )
+
+[node name="BackgroundFlop" type="Sprite" parent="."]
+position = Vector2( 962.289, 352 )
+rotation = 3.14159
+scale = Vector2( 122.001, -30.2442 )
+texture = ExtResource( 7 )
+
+[node name="Glass" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 4
+format = 1
+tile_data = PoolIntArray( 262270, 5, 0, 327806, 5, 0, 393216, 4, 0, 393217, 5, 0, 393218, 5, 0, 393219, 5, 0, 393220, 5, 0, 393221, 5, 0, 393222, 5, 0, 393223, 5, 0, 393224, 5, 0, 393225, 5, 0, 393226, 5, 0, 393227, 5, 0, 393228, 5, 0, 393229, 5, 0, 393230, 5, 0, 393231, 5, 0, 393232, 5, 0, 393233, 5, 0, 393234, 5, 0, 393235, 5, 0, 393236, 5, 0, 393237, 5, 0, 393238, 5, 0, 393239, 5, 0, 393240, 5, 0, 393241, 5, 0, 393242, 5, 0, 393243, 5, 0, 393244, 5, 0, 393245, 5, 0, 393246, 5, 0, 393247, 5, 0, 393248, 5, 0, 393249, 5, 0, 393250, 5, 0, 393251, 5, 0, 393252, 5, 0, 393253, 5, 0, 393254, 5, 0, 393255, 5, 0, 393256, 5, 0, 393257, 5, 0, 393258, 5, 0, 393259, 5, 0, 393260, 5, 0, 393261, 5, 0, 393262, 5, 0, 393263, 5, 0, 393264, 5, 0, 393265, 5, 0, 393266, 5, 0, 393267, 5, 0, 393268, 5, 0, 393269, 5, 0, 393270, 5, 0, 393271, 5, 0, 393272, 5, 0, 393273, 5, 0, 393274, 5, 0, 393275, 5, 0, 393276, 5, 0, 393277, 5, 0, 393278, 5, 0, 393279, 5, 0, 393280, 5, 0, 393281, 5, 0, 393282, 5, 0, 393283, 5, 0, 393284, 5, 0, 393285, 5, 0, 393286, 5, 0, 393287, 5, 0, 393288, 5, 0, 393289, 5, 0, 393290, 5, 0, 393291, 5, 0, 393292, 5, 0, 393293, 5, 0, 393294, 5, 0, 393295, 5, 0, 393296, 5, 0, 393297, 5, 0, 393298, 5, 0, 393299, 5, 0, 393300, 5, 0, 393301, 5, 0, 393302, 5, 0, 393303, 5, 0, 393304, 5, 0, 393305, 5, 0, 393306, 5, 0, 393307, 5, 0, 393308, 5, 0, 393309, 5, 0, 393310, 5, 0, 393311, 5, 0, 393312, 5, 0, 393313, 5, 0, 393314, 5, 0, 393315, 5, 0, 393316, 5, 0, 393317, 5, 0, 393318, 5, 0, 393319, 5, 0, 393320, 5, 0, 393321, 5, 0, 393322, 5, 0, 393323, 5, 0, 393324, 5, 0, 393325, 5, 0, 393326, 5, 0, 393327, 5, 0, 393328, 5, 0, 393329, 5, 0, 393330, 5, 0, 393331, 5, 0, 393332, 5, 0, 393333, 5, 0, 393334, 5, 0, 393335, 5, 0, 393336, 5, 0, 393337, 5, 0, 393338, 5, 0, 393339, 5, 0, 393340, 5, 0, 393341, 5, 0, 524287, 6, 0, 589823, 6, 0, 655359, 6, 0, 720895, 6, 0, 786431, 6, 0, 851967, 6, 0, 917503, 6, 0, 983039, 6, 0, 1048575, 6, 0, 1114111, 6, 0 )
+
+[node name="PlatformsFlip" type="TileMap" parent="."]
+material = SubResource( 2 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 2
+format = 1
+tile_data = PoolIntArray( -65537, 6, 0, -130989, 8, 0, -1, 6, 0, -65486, 8, 0, 65535, 6, 0, 12, 7, 0, 13, 9, 0, 74, 8, 0, 131071, 6, 0, 65569, 8, 0, 65580, 8, 0, 196607, 6, 0, 131170, 8, 0, 262143, 6, 0, 196616, 7, 0, 196617, 9, 0, 196636, 8, 0, 196674, 8, 0, 327679, 6, 0, 393215, 6, 0, 458751, 6, 0, 589880, 7, 0, 589881, 9, 0, 786483, 7, 0, 786484, 9, 0, 917550, 8, 0, 1114160, 8, 0, 1179702, 8, 0, 1179707, 8, 0, 1376312, 8, 0 )
+
+[node name="VoidsFlip" type="Node2D" parent="."]
+
+[node name="Void" parent="VoidsFlip" instance=ExtResource( 4 )]
+position = Vector2( 144, 88 )
+rotation = -1.57079
+
+[node name="Void2" parent="VoidsFlip" instance=ExtResource( 4 )]
+position = Vector2( 208, 88 )
+rotation = 1.57079
+
+[node name="Void3" parent="VoidsFlip" instance=ExtResource( 4 )]
+position = Vector2( 176, 88 )
+rotation = -1.57079
+
+[node name="Void4" parent="VoidsFlip" instance=ExtResource( 4 )]
+position = Vector2( 240, 88 )
+rotation = -1.57079
+
+[node name="Void5" parent="VoidsFlip" instance=ExtResource( 4 )]
+position = Vector2( 600, 88 )
+rotation = 1.57079
+
+[node name="Void6" parent="VoidsFlip" instance=ExtResource( 4 )]
+position = Vector2( 336, 88 )
+rotation = 1.57079
+
+[node name="Void7" parent="VoidsFlip" instance=ExtResource( 4 )]
+position = Vector2( 472, 88 )
+rotation = 1.57079
+
+[node name="Void8" parent="VoidsFlip" instance=ExtResource( 4 )]
+position = Vector2( 504, 88 )
+rotation = 1.57079
+
+[node name="Void38" parent="VoidsFlip" instance=ExtResource( 4 )]
+position = Vector2( 496, 24 )
+rotation = 3.14159
+
+[node name="Void39" parent="VoidsFlip" instance=ExtResource( 4 )]
+position = Vector2( 592, 8 )
+rotation = 3.14159
+
+[node name="Void40" parent="VoidsFlip" instance=ExtResource( 4 )]
+position = Vector2( 632, 8 )
+rotation = 3.14159
+
+[node name="Void41" parent="VoidsFlip" instance=ExtResource( 4 )]
+position = Vector2( 672, 0 )
+rotation = 3.14159
+
+[node name="Void42" parent="VoidsFlip" instance=ExtResource( 4 )]
+position = Vector2( 736, 8 )
+rotation = 3.14159
+
+[node name="Void43" parent="VoidsFlip" instance=ExtResource( 4 )]
+position = Vector2( 776, 0 )
+rotation = 3.14159
+
+[node name="Void9" parent="VoidsFlip" instance=ExtResource( 4 )]
+position = Vector2( 568, 88 )
+rotation = 1.57079
+
+[node name="Void10" parent="VoidsFlip" instance=ExtResource( 4 )]
+position = Vector2( 304, 88 )
+rotation = 1.57079
+
+[node name="Void11" parent="VoidsFlip" instance=ExtResource( 4 )]
+position = Vector2( 664, 88 )
+rotation = 1.57079
+
+[node name="Void12" parent="VoidsFlip" instance=ExtResource( 4 )]
+position = Vector2( 632, 88 )
+rotation = 1.57079
+
+[node name="Void13" parent="VoidsFlip" instance=ExtResource( 4 )]
+position = Vector2( 536, 88 )
+rotation = 1.57079
+
+[node name="Void14" parent="VoidsFlip" instance=ExtResource( 4 )]
+position = Vector2( 696, 88 )
+rotation = 1.57079
+
+[node name="Void15" parent="VoidsFlip" instance=ExtResource( 4 )]
+position = Vector2( 728, 88 )
+rotation = 1.57079
+
+[node name="Void16" parent="VoidsFlip" instance=ExtResource( 4 )]
+position = Vector2( 792, 88 )
+rotation = 1.57079
+
+[node name="Void17" parent="VoidsFlip" instance=ExtResource( 4 )]
+position = Vector2( 760, 88 )
+rotation = 1.57079
+
+[node name="Void18" parent="VoidsFlip" instance=ExtResource( 4 )]
+position = Vector2( 824, 88 )
+rotation = 1.57079
+
+[node name="Void19" parent="VoidsFlip" instance=ExtResource( 4 )]
+position = Vector2( 920, 88 )
+rotation = 1.57079
+
+[node name="Void22" parent="VoidsFlip" instance=ExtResource( 4 )]
+position = Vector2( 1072, 88 )
+rotation = 4.71238
+
+[node name="Void23" parent="VoidsFlip" instance=ExtResource( 4 )]
+position = Vector2( 1040, 88 )
+rotation = 4.71238
+
+[node name="Void20" parent="VoidsFlip" instance=ExtResource( 4 )]
+position = Vector2( 856, 88 )
+rotation = 1.57079
+
+[node name="Void21" parent="VoidsFlip" instance=ExtResource( 4 )]
+position = Vector2( 888, 88 )
+rotation = 1.57079
+
+[node name="Void24" parent="VoidsFlip" instance=ExtResource( 4 )]
+position = Vector2( 952, 88 )
+rotation = 1.57079
+
+[node name="Void25" parent="VoidsFlip" instance=ExtResource( 4 )]
+position = Vector2( 1048, -40 )
+rotation = 1.57079
+
+[node name="Void28" parent="VoidsFlip" instance=ExtResource( 4 )]
+position = Vector2( 1104, 88 )
+rotation = 1.57079
+
+[node name="Void29" parent="VoidsFlip" instance=ExtResource( 4 )]
+position = Vector2( 1168, 88 )
+rotation = 4.71238
+
+[node name="Void30" parent="VoidsFlip" instance=ExtResource( 4 )]
+position = Vector2( 1136, 88 )
+rotation = 4.71238
+
+[node name="Void31" parent="VoidsFlip" instance=ExtResource( 4 )]
+position = Vector2( 1200, 88 )
+rotation = 1.57079
+
+[node name="Void32" parent="VoidsFlip" instance=ExtResource( 4 )]
+position = Vector2( 1264, 88 )
+rotation = 4.71238
+
+[node name="Void33" parent="VoidsFlip" instance=ExtResource( 4 )]
+position = Vector2( 1232, 88 )
+rotation = 4.71238
+
+[node name="Void34" parent="VoidsFlip" instance=ExtResource( 4 )]
+position = Vector2( 1296, 88 )
+rotation = 1.57079
+
+[node name="Void35" parent="VoidsFlip" instance=ExtResource( 4 )]
+position = Vector2( 1360, 88 )
+rotation = 4.71238
+
+[node name="Void36" parent="VoidsFlip" instance=ExtResource( 4 )]
+position = Vector2( 1328, 88 )
+rotation = 4.71238
+
+[node name="Void37" parent="VoidsFlip" instance=ExtResource( 4 )]
+position = Vector2( 1392, 88 )
+rotation = 1.57079
+
+[node name="Void44" parent="VoidsFlip" instance=ExtResource( 4 )]
+position = Vector2( 1456, 88 )
+rotation = 4.71238
+
+[node name="Void45" parent="VoidsFlip" instance=ExtResource( 4 )]
+position = Vector2( 1424, 88 )
+rotation = 4.71238
+
+[node name="Void46" parent="VoidsFlip" instance=ExtResource( 4 )]
+position = Vector2( 1488, 88 )
+rotation = 1.57079
+
+[node name="Void47" parent="VoidsFlip" instance=ExtResource( 4 )]
+position = Vector2( 1552, 88 )
+rotation = 4.71238
+
+[node name="Void48" parent="VoidsFlip" instance=ExtResource( 4 )]
+position = Vector2( 1520, 88 )
+rotation = 4.71238
+
+[node name="Void53" parent="VoidsFlip" instance=ExtResource( 4 )]
+position = Vector2( 1688, 88 )
+rotation = 4.71238
+
+[node name="Void54" parent="VoidsFlip" instance=ExtResource( 4 )]
+position = Vector2( 1720, 88 )
+rotation = 4.71238
+
+[node name="Void55" parent="VoidsFlip" instance=ExtResource( 4 )]
+position = Vector2( 1752, 88 )
+rotation = 4.71238
+
+[node name="Void49" parent="VoidsFlip" instance=ExtResource( 4 )]
+position = Vector2( 1584, 88 )
+rotation = 1.57079
+
+[node name="Void50" parent="VoidsFlip" instance=ExtResource( 4 )]
+position = Vector2( 1608, 48 )
+rotation = 6.28318
+
+[node name="Void51" parent="VoidsFlip" instance=ExtResource( 4 )]
+position = Vector2( 1608, 80 )
+rotation = 6.28318
+
+[node name="Void52" parent="VoidsFlip" instance=ExtResource( 4 )]
+position = Vector2( 1608, 16 )
+rotation = 3.14159
+
+[node name="Void26" parent="VoidsFlip" instance=ExtResource( 4 )]
+position = Vector2( 984, -40 )
+rotation = 1.57079
+
+[node name="Void27" parent="VoidsFlip" instance=ExtResource( 4 )]
+position = Vector2( 1016, -40 )
+rotation = 1.57079
+
+[node name="PlatformsFlop" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 2
+format = 1
+tile_data = PoolIntArray( 524290, 7, 0, 524291, 9, 0, 524348, 8, 0, 589854, 7, 0, 589855, 8, 0, 589856, 9, 0, 655422, 8, 0, 720901, 7, 0, 720902, 9, 0, 720937, 7, 0, 720938, 9, 0, 720968, 7, 0, 720969, 9, 0, 720975, 7, 0, 720976, 9, 0, 720980, 7, 0, 720981, 8, 0, 720982, 8, 0, 720983, 8, 0, 720984, 8, 0, 720985, 9, 0, 786492, 8, 0 )
+
+[node name="VoidsFlop" type="Node2D" parent="."]
+
+[node name="Void" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 208, 128 )
+rotation = 3.14159
+
+[node name="Void2" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 208, 280 )
+rotation = 3.14159
+
+[node name="Void3" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 208, 160 )
+rotation = 3.14159
+
+[node name="Void4" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 208, 192 )
+rotation = 3.14159
+
+[node name="Void5" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 632, 120 )
+rotation = 1.5708
+
+[node name="Void6" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 472, 120 )
+rotation = 1.5708
+
+[node name="Void7" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 376, 176 )
+
+[node name="Void8" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 568, 120 )
+rotation = 1.5708
+
+[node name="Void9" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 600, 120 )
+rotation = 1.5708
+
+[node name="Void10" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 664, 120 )
+rotation = 1.5708
+
+[node name="Void11" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 696, 120 )
+rotation = 1.5708
+
+[node name="Void17" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 632, 120 )
+rotation = 1.5708
+
+[node name="Void18" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 600, 120 )
+rotation = 1.5708
+
+[node name="Void19" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 664, 120 )
+rotation = 1.5708
+
+[node name="Void20" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 696, 120 )
+rotation = 1.5708
+
+[node name="Void12" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 376, 208 )
+
+[node name="Void34" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 376, 240 )
+
+[node name="Void15" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 952, 128 )
+
+[node name="Void16" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 952, 160 )
+
+[node name="Void36" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 952, 192 )
+
+[node name="Void21" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 1016, 128 )
+
+[node name="Void22" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 1016, 160 )
+
+[node name="Void37" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 1016, 192 )
+
+[node name="Void35" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 1720, 128 )
+
+[node name="Void75" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 1720, 160 )
+
+[node name="Void13" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 504, 120 )
+rotation = 1.5708
+
+[node name="Void14" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 536, 120 )
+rotation = 1.5708
+
+[node name="Void23" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 1264, 120 )
+rotation = 1.5708
+
+[node name="Void24" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 1104, 120 )
+rotation = 1.5708
+
+[node name="Void25" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 1200, 120 )
+rotation = 1.5708
+
+[node name="Void26" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 1232, 120 )
+rotation = 1.5708
+
+[node name="Void27" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 1296, 120 )
+rotation = 1.5708
+
+[node name="Void28" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 1328, 120 )
+rotation = 1.5708
+
+[node name="Void29" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 1264, 120 )
+rotation = 1.5708
+
+[node name="Void30" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 1232, 120 )
+rotation = 1.5708
+
+[node name="Void31" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 1296, 120 )
+rotation = 1.5708
+
+[node name="Void32" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 1328, 120 )
+rotation = 1.5708
+
+[node name="Void33" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 1136, 120 )
+rotation = 1.5708
+
+[node name="Void38" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 1168, 120 )
+rotation = 1.5708
+
+[node name="Void39" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 1264, 120 )
+rotation = 1.5708
+
+[node name="Void40" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 1104, 120 )
+rotation = 1.5708
+
+[node name="Void41" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 1200, 120 )
+rotation = 1.5708
+
+[node name="Void42" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 1232, 120 )
+rotation = 1.5708
+
+[node name="Void43" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 1296, 120 )
+rotation = 1.5708
+
+[node name="Void44" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 1328, 120 )
+rotation = 1.5708
+
+[node name="Void45" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 1264, 120 )
+rotation = 1.5708
+
+[node name="Void46" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 1232, 120 )
+rotation = 1.5708
+
+[node name="Void47" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 1296, 120 )
+rotation = 1.5708
+
+[node name="Void48" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 1328, 120 )
+rotation = 1.5708
+
+[node name="Void49" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 1136, 120 )
+rotation = 1.5708
+
+[node name="Void50" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 1168, 120 )
+rotation = 1.5708
+
+[node name="Void51" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 1520, 120 )
+rotation = 1.5708
+
+[node name="Void52" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 1360, 120 )
+rotation = 1.5708
+
+[node name="Void53" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 1456, 120 )
+rotation = 1.5708
+
+[node name="Void54" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 1488, 120 )
+rotation = 1.5708
+
+[node name="Void55" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 1552, 120 )
+rotation = 1.5708
+
+[node name="Void56" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 1584, 120 )
+rotation = 1.5708
+
+[node name="Void57" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 1520, 120 )
+rotation = 1.5708
+
+[node name="Void58" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 1488, 120 )
+rotation = 1.5708
+
+[node name="Void59" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 1552, 120 )
+rotation = 1.5708
+
+[node name="Void60" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 1584, 120 )
+rotation = 1.5708
+
+[node name="Void61" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 1392, 120 )
+rotation = 1.5708
+
+[node name="Void62" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 1424, 120 )
+rotation = 1.5708
+
+[node name="Void63" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 1520, 120 )
+rotation = 1.5708
+
+[node name="Void64" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 1360, 120 )
+rotation = 1.5708
+
+[node name="Void65" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 1456, 120 )
+rotation = 1.5708
+
+[node name="Void66" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 1488, 120 )
+rotation = 1.5708
+
+[node name="Void67" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 1552, 120 )
+rotation = 1.5708
+
+[node name="Void68" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 1584, 120 )
+rotation = 1.5708
+
+[node name="Void69" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 1520, 120 )
+rotation = 1.5708
+
+[node name="Void70" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 1488, 120 )
+rotation = 1.5708
+
+[node name="Void71" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 1552, 120 )
+rotation = 1.5708
+
+[node name="Void72" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 1584, 120 )
+rotation = 1.5708
+
+[node name="Void73" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 1392, 120 )
+rotation = 1.5708
+
+[node name="Void74" parent="VoidsFlop" instance=ExtResource( 6 )]
+position = Vector2( 1424, 120 )
+rotation = 1.5708
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 16, 91 )
+collision_mask = 14
+jump_height = 50.0
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
+process_mode = 0
+limit_left = 0
+limit_top = -1000
+limit_right = 2000
+limit_bottom = 1000
+editor_draw_limits = true
+
+[node name="Light2D" type="Light2D" parent="Player"]
+texture = ExtResource( 3 )
+texture_scale = 2.42
+energy = 1.03
+mode = 2
+
+[node name="Platform" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1104, 144 )
+duration = 5.0
+move_from = Vector2( 128, 0 )
+
+[node name="Orbs" type="Node2D" parent="."]
+
+[node name="lightOrb" parent="Orbs" instance=ExtResource( 10 )]
+position = Vector2( 744, 256 )
+
+[node name="lightOrb4" parent="Orbs" instance=ExtResource( 10 )]
+position = Vector2( 744, 128 )
+
+[node name="lightOrb2" parent="Orbs" instance=ExtResource( 10 )]
+position = Vector2( 904, 363 )
+
+[node name="lightOrb5" parent="Orbs" instance=ExtResource( 10 )]
+position = Vector2( 1058, 128 )
+
+[node name="lightOrb3" parent="Orbs" instance=ExtResource( 10 )]
+position = Vector2( 1168, 208 )
+
+[node name="lightOrb6" parent="Orbs" instance=ExtResource( 10 )]
+position = Vector2( 1520, 216 )
+
+[node name="darkOrb" parent="Orbs" instance=ExtResource( 9 )]
+position = Vector2( 832, 222 )
+
+[node name="darkOrb2" parent="Orbs" instance=ExtResource( 9 )]
+position = Vector2( 1296, 208 )
