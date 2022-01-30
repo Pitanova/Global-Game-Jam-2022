@@ -1,0 +1,157 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/Credits Background.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Fonts/SecularOne-Regular.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 15
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 14
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 2 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Background" type="TextureRect" parent="."]
+self_modulate = Color( 0.392157, 0.392157, 0.392157, 1 )
+margin_right = 1280.0
+margin_bottom = 720.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Node" parent="."]
+
+[node name="FlipTitle" type="RichTextLabel" parent="Title"]
+margin_left = 160.0
+margin_top = 8.0
+margin_right = 216.0
+margin_bottom = 48.0
+custom_fonts/normal_font = SubResource( 1 )
+text = "Flip"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FlopTitle" type="RichTextLabel" parent="Title"]
+margin_left = 200.0
+margin_top = 24.0
+margin_right = 256.0
+margin_bottom = 64.0
+custom_fonts/normal_font = SubResource( 1 )
+text = "Flop"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Keys" type="Node" parent="."]
+
+[node name="Development" type="RichTextLabel" parent="Keys"]
+margin_left = 76.0
+margin_top = 72.0
+margin_right = 212.0
+margin_bottom = 112.0
+custom_fonts/normal_font = SubResource( 2 )
+text = "Development:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Music" type="RichTextLabel" parent="Keys"]
+margin_left = 76.0
+margin_top = 95.0
+margin_right = 172.0
+margin_bottom = 135.0
+custom_fonts/normal_font = SubResource( 2 )
+text = "Music:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Art" type="RichTextLabel" parent="Keys"]
+margin_left = 76.0
+margin_top = 114.0
+margin_right = 172.0
+margin_bottom = 154.0
+custom_fonts/normal_font = SubResource( 2 )
+text = "Art:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tools" type="RichTextLabel" parent="Keys"]
+margin_left = 76.0
+margin_top = 138.0
+margin_right = 172.0
+margin_bottom = 178.0
+custom_fonts/normal_font = SubResource( 2 )
+text = "Tools:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Values" type="Node" parent="."]
+
+[node name="DevelopmentValue" type="RichTextLabel" parent="Values"]
+margin_left = 183.0
+margin_top = 73.0
+margin_right = 460.0
+margin_bottom = 113.0
+custom_fonts/normal_font = SubResource( 3 )
+text = "Ryan Albrecht, Tim Solokha"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MusicValue" type="RichTextLabel" parent="Values"]
+margin_left = 182.0
+margin_top = 98.0
+margin_right = 459.0
+margin_bottom = 138.0
+custom_fonts/normal_font = SubResource( 3 )
+text = "Wally Stogner, Skyler Cash"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ArtValue" type="RichTextLabel" parent="Values"]
+margin_left = 183.0
+margin_top = 143.0
+margin_right = 460.0
+margin_bottom = 183.0
+custom_fonts/normal_font = SubResource( 3 )
+text = "Godot, sfxia, pixelspace"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ToolsValue" type="RichTextLabel" parent="Values"]
+margin_left = 183.0
+margin_top = 119.0
+margin_right = 460.0
+margin_bottom = 159.0
+custom_fonts/normal_font = SubResource( 3 )
+text = "Tim Solokha"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ThankPlayer" type="RichTextLabel" parent="."]
+margin_left = 115.0
+margin_top = 189.0
+margin_right = 363.0
+margin_bottom = 229.0
+custom_fonts/normal_font = SubResource( 4 )
+text = "Thank you for playing!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
