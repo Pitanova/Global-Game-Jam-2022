@@ -1,8 +1,10 @@
 extends KinematicBody2D
 
-export var move_speed = 200.0
-
+const MAX_SPEED = 200.0
 var velocity := Vector2.ZERO
+const ACCELERATION = 50
+const SLOW_DOWN_PERCENT_GROUND = 0.4
+const SLOW_DOWN_PERCENT_AIR = 0.2
 
 var dimension := false
 # where true is right and false is left
@@ -20,7 +22,21 @@ var light_default = 1.03
 
 func _physics_process(delta):
 	velocity.y += get_jump_gravity() * delta
-	velocity.x = get_input_velocity() * move_speed
+
+	if Input.is_action_pressed("left"):
+		velocity.x = max(velocity.x - ACCELERATION, -MAX_SPEED)
+		$Sprite.set_flip_h(true)
+	elif Input.is_action_pressed("right"):
+		velocity.x = min(velocity.x + ACCELERATION, MAX_SPEED)
+		$Sprite.set_flip_h(false)
+	else:
+		# idle player
+		# if friction should be applied
+		if (is_on_floor() or is_on_ceiling()):
+			velocity.x = lerp(velocity.x, 0, SLOW_DOWN_PERCENT_GROUND)
+		else:
+			# else air friction
+			velocity.x = lerp(velocity.x, 0, SLOW_DOWN_PERCENT_AIR)
 
 	var dimension_modifier := 1
 	if dimension:
@@ -46,18 +62,6 @@ func _physics_process(delta):
 		jump()
 		$SoundJump.play()
 	
-	#if dimension:
-	#	$Light2D.energy = 2.1
-	#else:
-	#	$Light2D.energy = 2
-	
-	#$playerTrailRight.visible = false
-	#$playerTrailLeft.visible = false
-	
-	#if velocity.x >= 0.1 and (is_on_floor() or is_on_ceiling()):
-	#	$playerTrailLeft.visible = true
-	#elif velocity.x <= -0.1 and (is_on_floor() or is_on_ceiling()):
-	#	$playerTrailRight.visible = true
 	
 	if dimension:
 		if $Light2D.energy >= 0:
@@ -82,18 +86,6 @@ func jump():
 		velocity.y = jump_velocity
 	else:
 		velocity.y = -jump_velocity
-
-func get_input_velocity() -> float:
-	var horizontal := 0.0
-	
-	if Input.is_action_pressed("left"):
-		horizontal -= 1.0
-		$Sprite.set_flip_h(true)
-	if Input.is_action_pressed("right"):
-		horizontal += 1.0
-		$Sprite.set_flip_h(false)
-		
-	return horizontal
 
 func got_lightOrb():
 	$Light2D.energy += 0.5
