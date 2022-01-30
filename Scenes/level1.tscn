@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/player.tscn" type="PackedScene" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Assets/Background.png" type="Texture" id=14]
 [ext_resource path="res://Assets/Sky-layer.png" type="Texture" id=15]
 [ext_resource path="res://Sounds & Music/Flip_Flop_Victory_Theme.wav" type="AudioStream" id=16]
+[ext_resource path="res://Assets/Space Background Flip2.png" type="Texture" id=17]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 blend_mode = 1
@@ -37,19 +38,22 @@ rotation = 3.14159
 scale = Vector2( 105.011, -30.2442 )
 texture = ExtResource( 5 )
 
+[node name="SpaceFlip" type="Sprite" parent="."]
+position = Vector2( 832, -136 )
+texture = ExtResource( 17 )
+
+[node name="BackgroundFlip" type="Sprite" parent="."]
+material = SubResource( 1 )
+position = Vector2( 830, -64 )
+scale = Vector2( 4.17, 0.8 )
+texture = ExtResource( 14 )
+
 [node name="SpaceFlop" type="Sprite" parent="."]
 position = Vector2( 832, 352 )
 texture = ExtResource( 8 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0, 0, 0, 1 )
-
-[node name="BackgroundFlip" type="Sprite" parent="."]
-visible = false
-material = SubResource( 1 )
-position = Vector2( 830, -64 )
-scale = Vector2( 4.17, 0.8 )
-texture = ExtResource( 14 )
 
 [node name="Glass" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
@@ -303,30 +307,36 @@ shape = SubResource( 4 )
 [node name="ParallaxFlip" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxFlip"]
+visible = false
 motion_scale = Vector2( 0, 1 )
 motion_mirroring = Vector2( 330, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxFlip/ParallaxLayer"]
+visible = false
 position = Vector2( 0, -232 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 15 )
 centered = false
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxFlip"]
+visible = false
 motion_scale = Vector2( 0, 1 )
 motion_mirroring = Vector2( 330, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxFlip/ParallaxLayer3"]
+visible = false
 position = Vector2( 660, -232 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 15 )
 centered = false
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxFlip"]
+visible = false
 motion_scale = Vector2( 0.3, 1 )
 motion_mirroring = Vector2( 580, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxFlip/ParallaxLayer2"]
+visible = false
 position = Vector2( -3, -192 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 10 )

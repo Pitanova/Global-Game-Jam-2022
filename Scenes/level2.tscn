@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/player.tscn" type="PackedScene" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://Assets/darktile.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/movingPlat.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/lightOrb.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Assets/Space Background Flip3.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Space Background Flop2.png" type="Texture" id=11]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 blend_mode = 1
@@ -21,26 +23,30 @@ extents = Vector2( 10, 72 )
 
 [node name="Level2" type="Node2D"]
 
-[node name="BackgroundFlip2" type="Sprite" parent="."]
+[node name="BackgroundFlop" type="Sprite" parent="."]
 position = Vector2( 1055.59, 351.999 )
 rotation = 3.14159
 scale = Vector2( 133.663, -30.2442 )
 texture = ExtResource( 7 )
 
+[node name="Space Flop" type="Sprite" parent="."]
+position = Vector2( 1004, 352 )
+scale = Vector2( 1.19712, 1 )
+texture = ExtResource( 11 )
+
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0, 0, 0, 1 )
+
+[node name="Space Flip" type="Sprite" parent="."]
+position = Vector2( 1000, -144 )
+scale = Vector2( 1.20192, 1 )
+texture = ExtResource( 10 )
 
 [node name="BackgroundFlip" type="Sprite" parent="."]
 material = SubResource( 1 )
 position = Vector2( 1060, -64 )
 scale = Vector2( 5.3, 0.8 )
 texture = ExtResource( 5 )
-
-[node name="BackgroundFlop" type="Sprite" parent="."]
-position = Vector2( 962.289, 352 )
-rotation = 3.14159
-scale = Vector2( 122.001, -30.2442 )
-texture = ExtResource( 7 )
 
 [node name="Glass" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
