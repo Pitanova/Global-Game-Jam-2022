@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/player.tscn" type="PackedScene" id=2]
@@ -12,6 +12,9 @@
 [ext_resource path="res://Assets/HelpImages/Arrow_Down_Key_Light.png" type="Texture" id=10]
 [ext_resource path="res://Assets/HelpImages/S_Key_Light.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Fonts/new_dynamicfont.tres" type="DynamicFont" id=12]
+[ext_resource path="res://Assets/Space Background.png" type="Texture" id=13]
+[ext_resource path="res://Assets/buildings-layer.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Sky-layer.png" type="Texture" id=15]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 blend_mode = 1
@@ -33,10 +36,15 @@ rotation = 3.14159
 scale = Vector2( 105.011, -30.2442 )
 texture = ExtResource( 7 )
 
+[node name="SpaceFlop" type="Sprite" parent="."]
+position = Vector2( 832, 352 )
+texture = ExtResource( 13 )
+
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0, 0, 0, 1 )
 
 [node name="BackgroundFlip" type="Sprite" parent="."]
+visible = false
 material = SubResource( 1 )
 position = Vector2( 830, -64 )
 scale = Vector2( 4.17, 0.8 )
@@ -290,5 +298,37 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 1248, 96 )
 shape = SubResource( 4 )
+
+[node name="ParallaxFlip" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxFlip"]
+motion_scale = Vector2( 0, 1 )
+motion_mirroring = Vector2( 330, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxFlip/ParallaxLayer"]
+position = Vector2( 0, -232 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 15 )
+centered = false
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxFlip"]
+motion_scale = Vector2( 0, 1 )
+motion_mirroring = Vector2( 330, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxFlip/ParallaxLayer3"]
+position = Vector2( 660, -232 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 15 )
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxFlip"]
+motion_scale = Vector2( 0.3, 1 )
+motion_mirroring = Vector2( 580, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxFlip/ParallaxLayer2"]
+position = Vector2( -3, -192 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 14 )
+centered = false
 
 [connection signal="body_entered" from="Area2D" to="Player" method="_on_Area2D_body_entered"]
