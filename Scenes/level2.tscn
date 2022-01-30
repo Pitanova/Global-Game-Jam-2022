@@ -15,7 +15,7 @@ blend_mode = 1
 [sub_resource type="CanvasItemMaterial" id=2]
 blend_mode = 3
 
-[node name="Level" type="Node2D"]
+[node name="Level2" type="Node2D"]
 
 [node name="BackgroundFlip2" type="Sprite" parent="."]
 visible = false

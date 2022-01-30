@@ -11,13 +11,13 @@ config_version=4
 [application]
 
 config/name="GGJ2022"
-run/main_scene="res://Scenes/level.tscn"
+run/main_scene="res://Scenes/mainMenu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 ParticlesCache="*res://Scripts/ParticlesCache.gd"
-SceneChanger="*res://Scripts/SceneChanger.gd"
+SceneChanger="*res://Scenes/SceneChanger.tscn"
 
 [display]
 
