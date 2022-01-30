@@ -33,6 +33,12 @@ position = Vector2( 968, -64 )
 scale = Vector2( 4.84, 0.8 )
 texture = ExtResource( 5 )
 
+[node name="BackgroundFlop" type="Sprite" parent="."]
+position = Vector2( 962.289, 352 )
+rotation = 3.14159
+scale = Vector2( 122.001, -30.2442 )
+texture = ExtResource( 7 )
+
 [node name="Glass" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
