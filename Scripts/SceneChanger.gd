@@ -1,7 +1,4 @@
 extends CanvasLayer
-
-signal scene_changed()
-
 onready var animation_player = $AnimationPlayer
 
 func change_scene(path, delay = 0.5):
@@ -9,7 +6,7 @@ func change_scene(path, delay = 0.5):
 	animation_player.play("fade_to_black")
 	yield(animation_player, "animation_finished")
 	animation_player.play_backwards("fade_to_black")
-	emit_signal("scene_changed")
+	get_tree().change_scene(path)
 
 func player_died(delay = 0.5):
 	yield(get_tree().create_timer(delay), "timeout")
