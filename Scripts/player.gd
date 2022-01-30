@@ -16,6 +16,8 @@ onready var jump_velocity : float = ((2.0 * jump_height) / jump_time_to_peak) * 
 onready var jump_gravity : float = ((-2.0 * jump_height) / (jump_time_to_peak * jump_time_to_peak)) * -1.0
 onready var fall_gravity : float = ((-2.0 * jump_height) / (jump_time_to_descent * jump_time_to_descent)) * -1.0
 
+var light_default = 1.03
+
 func _physics_process(delta):
 	velocity.y += get_jump_gravity() * delta
 	velocity.x = get_input_velocity() * move_speed
@@ -56,6 +58,15 @@ func _physics_process(delta):
 	#	$playerTrailLeft.visible = true
 	#elif velocity.x <= -0.1 and (is_on_floor() or is_on_ceiling()):
 	#	$playerTrailRight.visible = true
+	
+	if dimension:
+		if $Light2D.energy >= 0:
+			$Light2D.energy -= 0.05 * delta
+		else:
+			$Light2D.energy = 0
+	else:
+		$Light2D.energy = light_default
+
 	
 	velocity = move_and_slide(velocity, Vector2.UP)
 
