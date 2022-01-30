@@ -8,7 +8,7 @@ func _ready():
 var previous_dimension = true
 
 func sound_change(dimension):
-	if dimension != previous_dimension:
+	if (dimension != previous_dimension) or (not $FlopMusic.playing and not $FlipMusic.playing):
 		if dimension:
 			$FlopMusic.play($FlipMusic.get_playback_position())
 			$FlipMusic.stop()
@@ -16,3 +16,8 @@ func sound_change(dimension):
 			$FlipMusic.play($FlopMusic.get_playback_position())
 			$FlopMusic.stop()
 		previous_dimension = dimension
+
+func end_song():
+	$FlipMusic.stop()
+	$FlopMusic.stop()
+	$EndSong.play()

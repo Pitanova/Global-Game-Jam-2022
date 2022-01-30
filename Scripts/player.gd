@@ -106,9 +106,14 @@ func _on_Area2D_body_entered(body):
 	if body.get_name() == "Player":
 		print(get_tree().current_scene.name)
 		if get_tree().current_scene.name == "Level1":
-			$EndSong.play()
-			SceneChanger.change_scene("res://Scenes/level2.tscn")
+			can_move = false
+			AudioManager.end_song()
+			SceneChanger.change_scene("res://Scenes/level2.tscn", 4.68)
 		elif get_tree().current_scene.name == "Level2":
-			SceneChanger.change_scene("res://Scenes/level3.tscn")
+			can_move = false
+			AudioManager.end_song()
+			SceneChanger.change_scene("res://Scenes/level3.tscn", 4.68)
 		elif get_tree().current_scene.name == "Level3":
-			SceneChanger.change_scene("res://Scenes/credits.tscn")
+			can_move = false			
+			AudioManager.end_song()
+			SceneChanger.change_scene("res://Scenes/credits.tscn", 4.68)
